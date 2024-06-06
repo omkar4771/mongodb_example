@@ -1,1 +1,74 @@
+Microsoft Windows [Version 10.0.22631.3593]
+(c) Microsoft Corporation. All rights reserved.
 
+//............................mongodb start ..........................................//
+C:\Users\Omkar>mongosh
+Current Mongosh Log ID: 6661b2bca0d7f0f0b64262a7
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2
+Using MongoDB:          7.0.2
+Using Mongosh:          2.0.2
+mongosh 2.2.6 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-05-30T10:02:54.998+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+//...........................show database ...........................//
+test> db
+test
+//...........................use college database ..........................//
+test> use college
+switched to db college
+//............................create collection and insert document...........//
+college> db.student.insert({name:"omkar",age:23});
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6661c47ea0d7f0f0b64262a8") }
+}
+//.....................show all documents...........//
+college> db.student.find();
+[
+  { _id: ObjectId("6661c47ea0d7f0f0b64262a8"), name: 'omkar', age: 23 }
+]
+college> db.student({name:"shubham",age:25});
+TypeError: db.student is not a function
+college> db.student.insert({name:"shubham",age:25});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6661d0bfa0d7f0f0b64262a9") }
+}
+college> db.student.find();
+[
+  { _id: ObjectId("6661c47ea0d7f0f0b64262a8"), name: 'omkar', age: 23 },
+  {
+    _id: ObjectId("6661d0bfa0d7f0f0b64262a9"),
+    name: 'shubham',
+    age: 25
+  }
+]
+//..............................insert many collections...........//
+college> db.student.insertMany([{name:"rohan",age:22},{name:"yash",age:23}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6661e474a0d7f0f0b64262aa"),
+    '1': ObjectId("6661e474a0d7f0f0b64262ab")
+  }
+}
+//.........................find all collection......///
+............it will written in the form of array ................
+
+college> db.student.find({name:"omkar"});
+[
+  { _id: ObjectId("6661c47ea0d7f0f0b64262a8"), name: 'omkar', age: 23 }
+]
+
+//......................find one document............//
+...............it will written in the form of object .................
+college> db.student.findOne({age:23});
+{ _id: ObjectId("6661c47ea0d7f0f0b64262a8"), name: 'omkar', age: 23 }
+college>

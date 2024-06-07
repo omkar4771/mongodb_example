@@ -78,3 +78,7 @@ college> db.student.find({name:"omkar"});
 college> db.student.findOne({age:23});
 { _id: ObjectId("6661c47ea0d7f0f0b64262a8"), name: 'omkar', age: 23 }
 college>
+
+//......find student where marks > 75
+db.student.find({marks:{$gt :75});
+

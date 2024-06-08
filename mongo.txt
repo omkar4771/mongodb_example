@@ -82,3 +82,5 @@ college>
 //......find student where marks > 75
 db.student.find({marks:{$gt :75});
 
+
+

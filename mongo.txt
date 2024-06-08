@@ -82,5 +82,7 @@ college>
 //......find student where marks > 75
 db.student.find({marks:{$gt :75});
 
+//..........edit in database .........//
+db.student.uodateOne({name : "adam"},{$set :{marks:99}})
 
 

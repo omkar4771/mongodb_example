@@ -86,3 +86,5 @@ db.student.find({marks:{$gt :75});
 db.student.uodateOne({name : "adam"},{$set :{marks:99}})
 
 
+//.......................delete ...........//
+db.student.deleteOne({state :"Haryana"})

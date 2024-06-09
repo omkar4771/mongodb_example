@@ -38,3 +38,6 @@ restaurant> db.restaurants.find({"borough": "Bronx"}).limit(5);
 
 //7. Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
 restaurant> db.restaurants.find({"borough": "Bronx"}).skip(5).limit(5);
+
+//Write a MongoDB query to find the restaurants who achieved a score more than 90.
+restaurant> db.restaurants.find({grades : { $elemMatch:{"score":{$gt : 90}}}});

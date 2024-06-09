@@ -33,8 +33,8 @@ restaurant> db.restaurants.find()
 //5. Write a MongoDB query to display all the restaurant which is in the borough Bronx.
 restaurant> db.restaurants.find({borough : "Bronx"});
 
-//Write a MongoDB query to display the first 5 restaurant which is in the borough Bronx.
+//6. Write a MongoDB query to display the first 5 restaurant which is in the borough Bronx.
 restaurant> db.restaurants.find({"borough": "Bronx"}).limit(5);
 
-//Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
+//7. Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
 restaurant> db.restaurants.find({"borough": "Bronx"}).skip(5).limit(5);

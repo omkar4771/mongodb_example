@@ -4,6 +4,7 @@ Microsoft Windows [Version 10.0.22631.3593]
 
 //............................mongodb start ..........................................//
 
+
 C:\Users\Omkar>mongosh
 Current Mongosh Log ID: ........7
 Connecting to:          mongodb://...:...:..7017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2

@@ -56,4 +56,10 @@ restaurant> db.restaurants.find({$and:[{"cuisine" : {$ne :"American "}},{"grades
 Note : Do this query without using $and operator.
 restaurant> db.restaurants.find({ "cuisine" : {$ne : "American "}, "grades.score" :{$gt: 70}, "address.coord" : {$lt : -65.754168} });
 
+//13. Write a MongoDB query to find the restaurants which do not prepare any cuisine of 'American' and achieved a grade point 'A' not belongs to the borough Brooklyn. The document must be displayed according to the cuisine in descending order.
+restaurant>db.restaurants.find( {"cuisine" : {$ne : "American"}, "grades.grade" :"A", "borough": {$ne : "Brooklyn"}} ).sort({"cuisine":-1});
+
+//14. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'Wil' as first three letters for its name
+restaurant> db.restaurants.find({name: /^Wil/},{"restaurant_id" : 1,"name":1,"borough":1,"cuisine" :1});
+
 

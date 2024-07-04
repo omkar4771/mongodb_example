@@ -11,7 +11,6 @@ For mongosh info see: https://docs.mongodb.com/mongodb-shell/
    The server generated these startup warnings when booting
    2024-05-30T10:02:54.998+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
 ------
-
 test> show dbs
 Emp          40.00 KiB
 admin        40.00 KiB

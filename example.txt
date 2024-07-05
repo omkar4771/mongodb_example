@@ -67,4 +67,4 @@ restaurant> db.restaurants.find({name: /ces$/},{"restaurant_id" : 1,"name":1,"bo
 //16. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'Reg' as three letters somewhere in its name
 restaurant> db.restaurants.find({"name": /.*Reg.*/},{"restaurant_id" : 1,"name":1,"borough":1,"cuisine" :1});
 
-
+//17.
